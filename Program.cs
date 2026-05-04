@@ -141,13 +141,14 @@ namespace TahsinAltın_Odev1
             bool isRunning = true;
             while (isRunning)
             {
-                Console.WriteLine("\n=== Kurs Kayıt Sistemi ===");
-                Console.WriteLine("1- Öğrenci Ekle");
-                Console.WriteLine("2- Öğretmen Ekle");
-                Console.WriteLine("3- Listele");
-                Console.WriteLine("4- Dosyaya Kaydet");
-                Console.WriteLine("5- Dosyadan Oku (ogrenciler.txt)");
-                Console.WriteLine("6- Çıkış");
+                Console.WriteLine("\nÖğrenci Kurs Kayıt Sistemi");
+                Console.WriteLine("--------------------------");
+                Console.WriteLine("[1] Öğrenci Ekle");
+                Console.WriteLine("[2] Öğretmen Ekle");
+                Console.WriteLine("[3] Listele");
+                Console.WriteLine("[4] Dosyaya Kaydet");
+                Console.WriteLine("[5] Dosyadan Oku (ogrenciler.txt)");
+                Console.WriteLine("[6] Çıkış");
                 Console.Write("Seçiminiz: ");
 
                 string secim = Console.ReadLine() ?? string.Empty;
@@ -184,28 +185,28 @@ namespace TahsinAltın_Odev1
         {
             try
             {
-                Console.Write("Ad Soyad: ");
+                Console.Write("- Ad Soyad: ");
                 string adSoyad = Console.ReadLine() ?? string.Empty;
 
-                Console.Write("Yaş: ");
+                Console.Write("- Yaş: ");
                 int yas = int.Parse(Console.ReadLine() ?? string.Empty);
 
-                Console.Write("TC No: ");
+                Console.Write("- TC No: ");
                 string tcNo = Console.ReadLine() ?? string.Empty;
 
-                Console.Write("Öğrenci No: ");
+                Console.Write("- Öğrenci No: ");
                 string ogrNo = Console.ReadLine() ?? string.Empty;
 
-                Console.WriteLine("Bölüm seçiniz: 0-Yazilim 1-Muhasebe 2-Grafik 3-Elektrik");
+                Console.WriteLine("- Bölüm seçiniz: 0-Yazilim 1-Muhasebe 2-Grafik 3-Elektrik");
                 int bolumSecim = int.Parse(Console.ReadLine() ?? string.Empty);
                 Bolum bolum = (Bolum)bolumSecim;
 
-                Console.Write("Ortalama: ");
+                Console.Write("- Ortalama: ");
                 double ortalama = double.Parse(Console.ReadLine() ?? string.Empty);
 
                 Student ogrenci = new Student(adSoyad, yas, tcNo, ogrNo, bolum, ortalama);
                 Kisiler.Add(ogrenci);
-                Console.WriteLine("Öğrenci eklendi.");
+                Console.WriteLine("* Öğrenci eklendi. *");
             }
             catch (FormatException)
             {
@@ -225,24 +226,24 @@ namespace TahsinAltın_Odev1
         {
             try
             {
-                Console.Write("Ad Soyad: ");
+                Console.Write("- Ad Soyad: ");
                 string adSoyad = Console.ReadLine() ?? string.Empty;
 
-                Console.Write("Yaş: ");
+                Console.Write("- Yaş: ");
                 int yas = int.Parse(Console.ReadLine() ?? string.Empty);
 
-                Console.Write("TC No: ");
+                Console.Write("- TC No: ");
                 string tcNo = Console.ReadLine() ?? string.Empty;
 
-                Console.Write("Branş: ");
+                Console.Write("- Branş: ");
                 string brans = Console.ReadLine() ?? string.Empty;
 
-                Console.Write("Maaş: ");
+                Console.Write("- Maaş: ");
                 decimal maas = decimal.Parse(Console.ReadLine() ?? string.Empty);
 
                 Teacher ogretmen = new Teacher(adSoyad, yas, tcNo, brans, maas);
                 Kisiler.Add(ogretmen);
-                Console.WriteLine("Öğretmen eklendi.");
+                Console.WriteLine("* Öğretmen eklendi. *");
             }
             catch (FormatException)
             {
